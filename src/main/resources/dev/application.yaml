@@ -1,0 +1,16 @@
+  vault {
+    url = "http://127.0.0.1:8200"
+    role_id = "490e4607-e2bb-81fe-046c-b289713fd420"
+    secret_id = "76cc9abd-50ba-9cec-18bf-96e4d50415a1"
+    secrets_path = "secret/data/dev/bbu/fileupload-secrets"
+#    secrets_to_fetch =  ["client_cert", "client_key"]
+  }
+    
+    idp {
+    url = "https://127.0.0.1:8080"
+  }
+    
+    api {
+    url = "https://api-dev.example.com/upload"
+  }
+  

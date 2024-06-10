@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  vault:
+    image: vault:1.13.3  # Specify the image tag here
+    container_name: vault
+    ports:
+      - "8200:8200"
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "root"
+    restart: unless-stopped
+
+  idp:
+    image: mock-idp:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - MOCK_IDP_CLIENT_ID=idp_client
+      - MOCK_IDP_CLIENT_SECRET=idp_secret
